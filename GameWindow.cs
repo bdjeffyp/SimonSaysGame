@@ -124,5 +124,43 @@ namespace SimonSaysGame
             // Begin the game loop
             
         }
+
+        private void btnOptions_Click(object sender, EventArgs e)
+        {
+            // Displays the Options form as a modal dialog box
+            OptionsDialog optionsDialog = new OptionsDialog(this);
+            optionsDialog.ShowDialog(this);
+
+            // Set the options based on the selections in the dialog
+            if (optionsDialog.RadioArrows.Checked == true)
+            {
+                arrowKeys = true;
+            }
+            else if (optionsDialog.RadioWasd.Checked == true)
+            {
+                arrowKeys = false;
+            }
+
+            // Clean up when done
+            optionsDialog.Dispose();
+
+            // Update the game window with changes based on new options
+            if (arrowKeys == true)
+            {
+                // Set the button text to show arrow keys
+                btnUp.Text = "↑";
+                btnDown.Text = "↓";
+                btnLeft.Text = "←";
+                btnRight.Text = "→";
+            }
+            else
+            {
+                // Set the button text to show WASD
+                btnUp.Text = "W";
+                btnDown.Text = "S";
+                btnLeft.Text = "A";
+                btnRight.Text = "D";
+            }
+        }
     }
 }

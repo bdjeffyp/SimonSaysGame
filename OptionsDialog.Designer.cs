@@ -29,24 +29,24 @@
         private void InitializeComponent()
         {
             this.groupSoundFiles = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textUpSoundFile = new System.Windows.Forms.TextBox();
-            this.textLeftSoundFile = new System.Windows.Forms.TextBox();
-            this.textRightSoundFile = new System.Windows.Forms.TextBox();
-            this.textDownSoundFile = new System.Windows.Forms.TextBox();
-            this.btnUpSoundBrowse = new System.Windows.Forms.Button();
-            this.btnLeftSoundBrowse = new System.Windows.Forms.Button();
-            this.btnRightSoundBrowse = new System.Windows.Forms.Button();
             this.btnDownSoundBrowse = new System.Windows.Forms.Button();
+            this.btnRightSoundBrowse = new System.Windows.Forms.Button();
+            this.btnLeftSoundBrowse = new System.Windows.Forms.Button();
+            this.btnUpSoundBrowse = new System.Windows.Forms.Button();
+            this.textDownSoundFile = new System.Windows.Forms.TextBox();
+            this.textRightSoundFile = new System.Windows.Forms.TextBox();
+            this.textLeftSoundFile = new System.Windows.Forms.TextBox();
+            this.textUpSoundFile = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupKeyConfig = new System.Windows.Forms.GroupBox();
-            this.radioArrows = new System.Windows.Forms.RadioButton();
             this.radioWasd = new System.Windows.Forms.RadioButton();
+            this.radioArrows = new System.Windows.Forms.RadioButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnResetScores = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnOK = new System.Windows.Forms.Button();
             this.groupSoundFiles.SuspendLayout();
             this.groupKeyConfig.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -73,93 +73,15 @@
             this.groupSoundFiles.TabStop = false;
             this.groupSoundFiles.Text = "Sound Files";
             // 
-            // label1
+            // btnDownSoundBrowse
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(23, 28);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(28, 17);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Up:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(19, 60);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(32, 17);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Left:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(10, 92);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(41, 17);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Right:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(7, 124);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(44, 17);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Down:";
-            // 
-            // textUpSoundFile
-            // 
-            this.textUpSoundFile.Enabled = false;
-            this.textUpSoundFile.Location = new System.Drawing.Point(58, 25);
-            this.textUpSoundFile.Name = "textUpSoundFile";
-            this.textUpSoundFile.Size = new System.Drawing.Size(334, 25);
-            this.textUpSoundFile.TabIndex = 4;
-            // 
-            // textLeftSoundFile
-            // 
-            this.textLeftSoundFile.Enabled = false;
-            this.textLeftSoundFile.Location = new System.Drawing.Point(58, 57);
-            this.textLeftSoundFile.Name = "textLeftSoundFile";
-            this.textLeftSoundFile.Size = new System.Drawing.Size(334, 25);
-            this.textLeftSoundFile.TabIndex = 5;
-            // 
-            // textRightSoundFile
-            // 
-            this.textRightSoundFile.Enabled = false;
-            this.textRightSoundFile.Location = new System.Drawing.Point(58, 89);
-            this.textRightSoundFile.Name = "textRightSoundFile";
-            this.textRightSoundFile.Size = new System.Drawing.Size(334, 25);
-            this.textRightSoundFile.TabIndex = 6;
-            // 
-            // textDownSoundFile
-            // 
-            this.textDownSoundFile.Enabled = false;
-            this.textDownSoundFile.Location = new System.Drawing.Point(58, 121);
-            this.textDownSoundFile.Name = "textDownSoundFile";
-            this.textDownSoundFile.Size = new System.Drawing.Size(334, 25);
-            this.textDownSoundFile.TabIndex = 7;
-            // 
-            // btnUpSoundBrowse
-            // 
-            this.btnUpSoundBrowse.Enabled = false;
-            this.btnUpSoundBrowse.Location = new System.Drawing.Point(398, 25);
-            this.btnUpSoundBrowse.Name = "btnUpSoundBrowse";
-            this.btnUpSoundBrowse.Size = new System.Drawing.Size(86, 26);
-            this.btnUpSoundBrowse.TabIndex = 8;
-            this.btnUpSoundBrowse.Text = "Browse...";
-            this.btnUpSoundBrowse.UseVisualStyleBackColor = true;
-            // 
-            // btnLeftSoundBrowse
-            // 
-            this.btnLeftSoundBrowse.Enabled = false;
-            this.btnLeftSoundBrowse.Location = new System.Drawing.Point(398, 57);
-            this.btnLeftSoundBrowse.Name = "btnLeftSoundBrowse";
-            this.btnLeftSoundBrowse.Size = new System.Drawing.Size(86, 26);
-            this.btnLeftSoundBrowse.TabIndex = 9;
-            this.btnLeftSoundBrowse.Text = "Browse...";
-            this.btnLeftSoundBrowse.UseVisualStyleBackColor = true;
+            this.btnDownSoundBrowse.Enabled = false;
+            this.btnDownSoundBrowse.Location = new System.Drawing.Point(398, 121);
+            this.btnDownSoundBrowse.Name = "btnDownSoundBrowse";
+            this.btnDownSoundBrowse.Size = new System.Drawing.Size(86, 26);
+            this.btnDownSoundBrowse.TabIndex = 11;
+            this.btnDownSoundBrowse.Text = "Browse...";
+            this.btnDownSoundBrowse.UseVisualStyleBackColor = true;
             // 
             // btnRightSoundBrowse
             // 
@@ -171,15 +93,93 @@
             this.btnRightSoundBrowse.Text = "Browse...";
             this.btnRightSoundBrowse.UseVisualStyleBackColor = true;
             // 
-            // btnDownSoundBrowse
+            // btnLeftSoundBrowse
             // 
-            this.btnDownSoundBrowse.Enabled = false;
-            this.btnDownSoundBrowse.Location = new System.Drawing.Point(398, 121);
-            this.btnDownSoundBrowse.Name = "btnDownSoundBrowse";
-            this.btnDownSoundBrowse.Size = new System.Drawing.Size(86, 26);
-            this.btnDownSoundBrowse.TabIndex = 11;
-            this.btnDownSoundBrowse.Text = "Browse...";
-            this.btnDownSoundBrowse.UseVisualStyleBackColor = true;
+            this.btnLeftSoundBrowse.Enabled = false;
+            this.btnLeftSoundBrowse.Location = new System.Drawing.Point(398, 57);
+            this.btnLeftSoundBrowse.Name = "btnLeftSoundBrowse";
+            this.btnLeftSoundBrowse.Size = new System.Drawing.Size(86, 26);
+            this.btnLeftSoundBrowse.TabIndex = 9;
+            this.btnLeftSoundBrowse.Text = "Browse...";
+            this.btnLeftSoundBrowse.UseVisualStyleBackColor = true;
+            // 
+            // btnUpSoundBrowse
+            // 
+            this.btnUpSoundBrowse.Enabled = false;
+            this.btnUpSoundBrowse.Location = new System.Drawing.Point(398, 25);
+            this.btnUpSoundBrowse.Name = "btnUpSoundBrowse";
+            this.btnUpSoundBrowse.Size = new System.Drawing.Size(86, 26);
+            this.btnUpSoundBrowse.TabIndex = 8;
+            this.btnUpSoundBrowse.Text = "Browse...";
+            this.btnUpSoundBrowse.UseVisualStyleBackColor = true;
+            // 
+            // textDownSoundFile
+            // 
+            this.textDownSoundFile.Enabled = false;
+            this.textDownSoundFile.Location = new System.Drawing.Point(58, 121);
+            this.textDownSoundFile.Name = "textDownSoundFile";
+            this.textDownSoundFile.Size = new System.Drawing.Size(334, 25);
+            this.textDownSoundFile.TabIndex = 7;
+            // 
+            // textRightSoundFile
+            // 
+            this.textRightSoundFile.Enabled = false;
+            this.textRightSoundFile.Location = new System.Drawing.Point(58, 89);
+            this.textRightSoundFile.Name = "textRightSoundFile";
+            this.textRightSoundFile.Size = new System.Drawing.Size(334, 25);
+            this.textRightSoundFile.TabIndex = 6;
+            // 
+            // textLeftSoundFile
+            // 
+            this.textLeftSoundFile.Enabled = false;
+            this.textLeftSoundFile.Location = new System.Drawing.Point(58, 57);
+            this.textLeftSoundFile.Name = "textLeftSoundFile";
+            this.textLeftSoundFile.Size = new System.Drawing.Size(334, 25);
+            this.textLeftSoundFile.TabIndex = 5;
+            // 
+            // textUpSoundFile
+            // 
+            this.textUpSoundFile.Enabled = false;
+            this.textUpSoundFile.Location = new System.Drawing.Point(58, 25);
+            this.textUpSoundFile.Name = "textUpSoundFile";
+            this.textUpSoundFile.Size = new System.Drawing.Size(334, 25);
+            this.textUpSoundFile.TabIndex = 4;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(7, 124);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(44, 17);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "Down:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(10, 92);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(41, 17);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Right:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(19, 60);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(32, 17);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Left:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(23, 28);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(28, 17);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Up:";
             // 
             // groupKeyConfig
             // 
@@ -192,6 +192,17 @@
             this.groupKeyConfig.TabStop = false;
             this.groupKeyConfig.Text = "Key Configuration";
             // 
+            // radioWasd
+            // 
+            this.radioWasd.AutoSize = true;
+            this.radioWasd.Location = new System.Drawing.Point(13, 52);
+            this.radioWasd.Name = "radioWasd";
+            this.radioWasd.Size = new System.Drawing.Size(92, 21);
+            this.radioWasd.TabIndex = 1;
+            this.radioWasd.TabStop = true;
+            this.radioWasd.Text = "WASD Keys";
+            this.radioWasd.UseVisualStyleBackColor = true;
+            // 
             // radioArrows
             // 
             this.radioArrows.AutoSize = true;
@@ -203,17 +214,6 @@
             this.radioArrows.TabStop = true;
             this.radioArrows.Text = "Arrow Keys";
             this.radioArrows.UseVisualStyleBackColor = true;
-            // 
-            // radioWasd
-            // 
-            this.radioWasd.AutoSize = true;
-            this.radioWasd.Location = new System.Drawing.Point(13, 52);
-            this.radioWasd.Name = "radioWasd";
-            this.radioWasd.Size = new System.Drawing.Size(92, 21);
-            this.radioWasd.TabIndex = 1;
-            this.radioWasd.TabStop = true;
-            this.radioWasd.Text = "WASD Keys";
-            this.radioWasd.UseVisualStyleBackColor = true;
             // 
             // groupBox1
             // 
@@ -235,21 +235,23 @@
             this.btnResetScores.Text = "Reset Scores";
             this.btnResetScores.UseVisualStyleBackColor = false;
             // 
-            // button1
+            // btnOK
             // 
-            this.button1.Location = new System.Drawing.Point(400, 209);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(103, 35);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "OK";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnOK.Location = new System.Drawing.Point(400, 209);
+            this.btnOK.Name = "btnOK";
+            this.btnOK.Size = new System.Drawing.Size(103, 35);
+            this.btnOK.TabIndex = 3;
+            this.btnOK.Text = "OK";
+            this.btnOK.UseVisualStyleBackColor = true;
             // 
             // OptionsDialog
             // 
+            this.AcceptButton = this.btnOK;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btnOK;
             this.ClientSize = new System.Drawing.Size(517, 278);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnOK);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupKeyConfig);
             this.Controls.Add(this.groupSoundFiles);
@@ -289,6 +291,78 @@
         private System.Windows.Forms.RadioButton radioArrows;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnResetScores;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnOK;
+
+        public System.Windows.Forms.RadioButton RadioArrows
+        {
+            get
+            {
+                return radioArrows;
+            }
+            set
+            {
+                radioArrows = value;
+            }
+        }
+
+        public System.Windows.Forms.RadioButton RadioWasd
+        {
+            get
+            {
+                return radioWasd;
+            }
+            set
+            {
+                radioWasd = value;
+            }
+        }
+
+        public System.Windows.Forms.TextBox TextUpSoundFile
+        {
+            get
+            {
+                return textUpSoundFile;
+            }
+            set
+            {
+                textUpSoundFile = value;
+            }
+        }
+
+        public System.Windows.Forms.TextBox TextLeftSoundFile
+        {
+            get
+            {
+                return textLeftSoundFile;
+            }
+            set
+            {
+                textLeftSoundFile = value;
+            }
+        }
+
+        public System.Windows.Forms.TextBox TextRightSoundFile
+        {
+            get
+            {
+                return textRightSoundFile;
+            }
+            set
+            {
+                textRightSoundFile = value;
+            }
+        }
+
+        public System.Windows.Forms.TextBox TextDownSoundFile
+        {
+            get
+            {
+                return TextDownSoundFile;
+            }
+            set
+            {
+                TextDownSoundFile = value;
+            }
+        }
     }
 }

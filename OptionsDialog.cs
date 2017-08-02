@@ -12,9 +12,21 @@ namespace SimonSaysGame
 {
     public partial class OptionsDialog : Form
     {
-        public OptionsDialog()
+        public OptionsDialog(GameWindow gameWindow)
         {
             InitializeComponent();
+
+            // Set values based on setting in GameWindow class
+            if (gameWindow.ArrowKeys == true)
+            {
+                RadioArrows.Checked = true;
+            }
+            else
+            {
+                RadioWasd.Checked = true;
+            }
+
+            // TODO: Do the same for the sound files
         }
     }
 }
