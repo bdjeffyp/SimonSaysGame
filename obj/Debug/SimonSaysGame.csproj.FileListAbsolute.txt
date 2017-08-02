@@ -1,0 +1,10 @@
+C:\Users\wwstudent\Documents\Visual Studio 2017\Projects\SimonSaysGame\SimonSaysGame\bin\Debug\SimonSaysGame.exe.config
+C:\Users\wwstudent\Documents\Visual Studio 2017\Projects\SimonSaysGame\SimonSaysGame\bin\Debug\SimonSaysGame.exe
+C:\Users\wwstudent\Documents\Visual Studio 2017\Projects\SimonSaysGame\SimonSaysGame\bin\Debug\SimonSaysGame.pdb
+C:\Users\wwstudent\Documents\Visual Studio 2017\Projects\SimonSaysGame\SimonSaysGame\obj\Debug\SimonSaysGame.csprojResolveAssemblyReference.cache
+C:\Users\wwstudent\Documents\Visual Studio 2017\Projects\SimonSaysGame\SimonSaysGame\obj\Debug\SimonSaysGame.GameWindow.resources
+C:\Users\wwstudent\Documents\Visual Studio 2017\Projects\SimonSaysGame\SimonSaysGame\obj\Debug\SimonSaysGame.Properties.Resources.resources
+C:\Users\wwstudent\Documents\Visual Studio 2017\Projects\SimonSaysGame\SimonSaysGame\obj\Debug\SimonSaysGame.csproj.GenerateResource.Cache
+C:\Users\wwstudent\Documents\Visual Studio 2017\Projects\SimonSaysGame\SimonSaysGame\obj\Debug\SimonSaysGame.exe
+C:\Users\wwstudent\Documents\Visual Studio 2017\Projects\SimonSaysGame\SimonSaysGame\obj\Debug\SimonSaysGame.pdb
+C:\Users\wwstudent\Documents\Visual Studio 2017\Projects\SimonSaysGame\SimonSaysGame\obj\Debug\SimonSaysGame.OptionsDialog.resources
