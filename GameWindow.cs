@@ -1,28 +1,30 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Media;
 
 namespace SimonSaysGame
 {
     public partial class GameWindow : Form
     {
         // Private data members
-        private int score;          // Increments with each successful sequence entry
-        private bool difficult;     // If true, speed of sequence display increases as score increases
-        private bool arrowKeys;     // Use arrow keys if true; WASD keys if false
-        private List<int> sequence; // Contains the sequence to display and verify
-        private Random randomizer;  // Our random number generator
-        private int currentStep;    // Where currently iterating in sequence
-        private Timer dispTimer;    // Timer for displaying sequence (affected by difficulty)
-        private Timer inputTimer;   // Timer for input delay (not affected by difficulty)
-        //Eventually add strings for paths and streams to hold .wav files
-        //Eventually add SoundPlayer class to playback .wav files
+        int score;          // Increments with each successful sequence entry
+        bool difficult;     // If true, speed of sequence display increases as score increases
+        bool arrowKeys;     // Use arrow keys if true; WASD keys if false
+        List<int> sequence; // Contains the sequence to display and verify
+        Random randomizer;  // Our random number generator
+        int currentStep;    // Where currently iterating in sequence
+        //Timer inputTimer;   // Timer for input delay (not affected by difficulty)
+        string upSoundFile = @"resource\up.wav";     // Holds path for the up sound effect
+        string leftSoundFile = @"resource\left.wav";   // Holds path for the left sound effect
+        string rightSoundFile = @"resource\right.wav";  // Holds path for the right sound effect
+        string downSoundFile = @"resource\down.wav";   // Holds path for the down sound effect
+        SoundPlayer upSound;        // Controls playback of up sound
+        SoundPlayer leftSound;      // Controls playback of left sound
+        SoundPlayer rightSound;     // Controls playback of right sound
+        SoundPlayer downSound;      // Controls playback of down sound
         //Need a path to the file to store options
         //Need a path to the file to store high scores
 
@@ -31,8 +33,9 @@ namespace SimonSaysGame
         const int LEFT = 1;
         const int RIGHT = 2;
         const int DOWN = 3;
-        const int EASY_TIME = 5000; // Milliseconds for pause between note display on standard difficulty
-        const int MAX_HARD_TIME = 1000;
+        const int EASY_TIME = 3000; // Milliseconds for pause between note display on standard difficulty
+        const int MAX_HARD_TIME = 500;
+        const int HARD_TIME_RATE = 200;
         
         // Properties
         public int Score
@@ -94,22 +97,27 @@ namespace SimonSaysGame
             randomizer = new Random();
 
             // Prepare the timers
-            inputTimer = new Timer();
-            dispTimer = new Timer();
+            //inputTimer = new Timer();
 
             // Initialize the list to start at 25 items in the sequence
             sequence = new List<int>(25);
 
-            // TODO: use a function to initialize SoundPlayer and .wav files
-            // This will allow me to do this with the Options dialog too.
+            // Initialize SoundPlayers
+            upSound = new SoundPlayer(upSoundFile);
+            leftSound = new SoundPlayer(leftSoundFile);
+            rightSound = new SoundPlayer(rightSoundFile);
+            downSound = new SoundPlayer(downSoundFile);
+
+            // TODO: Load Options file.
 
             // Show all the things
             InitializeComponent();
         }
 
-        private void btnNewGame_Click(object sender, EventArgs e)
+        private async void btnNewGame_Click(object sender, EventArgs e)
         {
             // Starts up a new game, resetting everything
+            int delayTime = EASY_TIME;
 
             // Reset the score to 0 and display it
             score = 0;
@@ -117,6 +125,12 @@ namespace SimonSaysGame
 
             // Reset the currentStep to 0
             currentStep = 0;
+
+            // Load sounds
+            upSound.Load();
+            leftSound.Load();
+            rightSound.Load();
+            downSound.Load();
 
             // Check the difficulty radio buttons and set the flag
             difficult = radioHardDiff.Checked;      // If false, easy is checked
@@ -131,10 +145,15 @@ namespace SimonSaysGame
                 sequence.Add(randomizer.Next(UP, DOWN+1));
             }
 
-            // Initialize timers with Easy difficulty timing first
-            inputTimer.Interval = EASY_TIME;
-            dispTimer.Interval = EASY_TIME;
+            // Disable the side controls
+            btnNewGame.Enabled = false;
+            radioHardDiff.Enabled = false;
+            radioStandardDiff.Enabled = false;
+            btnViewScores.Enabled = false;
+            btnOptions.Enabled = false;
 
+            // Initialize timers with Easy difficulty timing first
+            //inputTimer.Interval = EASY_TIME;
 
             // Begin the game loop...
             // Need to quit thinking like sequential programming and start
@@ -158,37 +177,51 @@ namespace SimonSaysGame
                  *    b. If a new high score, take user name
                  *    c. Update/display high scores
                  * */
+                
+                // Set display delay
+                if (difficult == true)
+                {
+                    if (score >= 5)
+                    {
+                        // Adjust the timer after five rounds
+                        delayTime -= HARD_TIME_RATE;
+                    }
+                    if (delayTime < MAX_HARD_TIME)
+                    {
+                        delayTime = MAX_HARD_TIME;
+                    }
+                }
 
-                // Display the sequence up to the current iteration
                 do
                 {
+                    // Display the sequence up to the current iteration
                     switch (sequence[currentStep])
                     {
                         case UP:        // Red
                             btnUp.BackColor = Color.Red;
-                            // TODO: Play a sound for Up button
-                            // TODO: Delay for time based on difficulty
+                            upSound.Play();
+                            await Task.Delay(delayTime);
                             btnUp.BackColor = DefaultBackColor;
                             break;
 
                         case LEFT:        // Blue
                             btnLeft.BackColor = Color.Blue;
-                            // TODO: Play a sound for Left button
-                            // TODO: Delay for time based on difficulty
+                            leftSound.Play();
+                            await Task.Delay(delayTime);
                             btnLeft.BackColor = DefaultBackColor;
                             break;
 
                         case RIGHT:        // Yellow
                             btnRight.BackColor = Color.Yellow;
-                            // TODO: Play a sound for Right button
-                            // TODO: Delay for time based on difficulty
+                            rightSound.Play();
+                            await Task.Delay(delayTime);
                             btnRight.BackColor = DefaultBackColor;
                             break;
 
                         case DOWN:        // Green
                             btnDown.BackColor = Color.Green;
-                            // TODO: Play a sound for Down button
-                            // TODO: Delay for time based on difficulty
+                            downSound.Play();
+                            await Task.Delay(delayTime);
                             btnDown.BackColor = DefaultBackColor;
                             break;
 
@@ -198,18 +231,39 @@ namespace SimonSaysGame
                             break;
                     }
 
+                    // Ensure all sounds have stopped
+                    upSound.Stop();
+                    leftSound.Stop();
+                    rightSound.Stop();
+                    downSound.Stop();
+
                     // Increment currentStep
                     currentStep++;
+                    // Tiny delay between displaying next color
+                    await Task.Delay(75);
                 } while (currentStep <= score);
 
                 // Accept user input
                 // TODO: Initiate timer to check for too long of a delay
-                
-                // All that follows should be within a loop for the timer
+
                 // TODO: Check the input from the keyboard or button press
 
-                // 
+                break;
             }
+
+            // Restore controls
+            this.AcceptButton = btnNewGame;
+            btnNewGame.Enabled = true;
+            radioHardDiff.Enabled = true;
+            radioStandardDiff.Enabled = true;
+            btnViewScores.Enabled = true;
+            btnOptions.Enabled = true;
+
+            // Free sounds from memory
+            upSound.Dispose();
+            leftSound.Dispose();
+            rightSound.Dispose();
+            downSound.Dispose();
         }
 
         private void btnOptions_Click(object sender, EventArgs e)

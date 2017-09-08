@@ -8,3 +8,4 @@ C:\Users\wwstudent\Documents\Visual Studio 2017\Projects\SimonSaysGame\SimonSays
 C:\Users\wwstudent\Documents\Visual Studio 2017\Projects\SimonSaysGame\SimonSaysGame\obj\Debug\SimonSaysGame.exe
 C:\Users\wwstudent\Documents\Visual Studio 2017\Projects\SimonSaysGame\SimonSaysGame\obj\Debug\SimonSaysGame.pdb
 C:\Users\wwstudent\Documents\Visual Studio 2017\Projects\SimonSaysGame\SimonSaysGame\obj\Debug\SimonSaysGame.OptionsDialog.resources
+C:\Users\wwstudent\Documents\Visual Studio 2017\Projects\SimonSaysGame\SimonSaysGame\obj\Debug\SimonSaysGame.csproj.CoreCompileInputs.cache
